@@ -1,0 +1,11 @@
+.symptoms-container {
+  background-color: #ed8f8e;
+  border: black;
+  border-radius: 20px;
+}
+.login-button {
+  background-color: #418bce;
+}
+.logout-button {
+  background-color: #febec9;
+}
