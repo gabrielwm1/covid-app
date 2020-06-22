@@ -9,6 +9,8 @@ const AgePicker = props => {
           type="range"
           className="form-control-range"
           id="formControlRange"
+          min="1"
+          max="120"
         ></input>
       </div>
     </div>

@@ -7,7 +7,7 @@ const SymptomOption = props => {
         <div className="form-check ">
           <input
             className="form-check-input"
-            type="radio"
+            type="checkbox"
             value=""
             id="defaultCheck1"
           ></input>
