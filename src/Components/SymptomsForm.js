@@ -44,13 +44,20 @@ class SymptomsForm extends Component {
             'Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin))',
           hasSymptom: false
         }
-      ]
+      ],
+
+      age: 1
     };
   }
 
+  handleAge(age) {
+    this.setState({
+      age: age
+    });
+  }
   onFormSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state.symptoms);
+    this.props.onSubmit(this.state);
   };
 
   render() {
@@ -60,7 +67,7 @@ class SymptomsForm extends Component {
         className="col-md-6 offset-md-3 symptoms-container"
       >
         <div>
-          <AgePicker />
+          <AgePicker handleAge={this.handleAge} />
           <div className="pt-1 pb-4 row container-fluid d-flex justify-content-center">
             <h3>Select your symptoms:</h3>
             {this.state.symptoms.map(symptom => (
