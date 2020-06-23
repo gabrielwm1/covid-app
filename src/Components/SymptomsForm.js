@@ -48,9 +48,17 @@ class SymptomsForm extends Component {
     };
   }
 
+  onFormSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit(this.state.symptoms);
+  };
+
   render() {
     return (
-      <form className="col-md-6 offset-md-3 symptoms-container">
+      <form
+        onSubmit={this.onFormSubmit}
+        className="col-md-6 offset-md-3 symptoms-container"
+      >
         <div>
           <AgePicker />
           <div className="pt-1 pb-4 row container-fluid d-flex justify-content-center">

@@ -7,11 +7,20 @@ class App extends Component {
     super(props);
   }
 
+  onSendSubmit(data) {
+    console.log(data);
+  }
+
   render() {
     return (
       <BrowserRouter>
         <Route path={'/login'} component={Login} />
-        <Route path={'/form'} component={SymptomsForm} />
+        <Route
+          path={'/form'}
+          render={onSubmit => (
+            <SymptomsForm {...this.props} onSubmit={this.onSendSubmit} />
+          )}
+        />
       </BrowserRouter>
     );
   }
